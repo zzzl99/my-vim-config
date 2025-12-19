@@ -37,7 +37,7 @@ endif
 " increase max size of registers
 set viminfo='50,<10000,s10000
 
-set cursorline
+" set cursorline
 
 " to enable backspace key
 " https://vi.stackexchange.com/a/2163
@@ -92,7 +92,7 @@ if has("patch-7.4.710")
 else
     set listchars=eol:↵,tab:\|\|,trail:~,extends:>,precedes:<
 endif
-set list
+" set list
 
 " Let's save undo info!
 " from https://vi.stackexchange.com/a/53
@@ -171,28 +171,16 @@ augroup end
 " *************************************************************************
 " basic keymaps
 " *************************************************************************
-
-" quickly edit this config file
-nnoremap <leader>ve :tabnew $MYVIMRC<CR>
-" quickly save and source this config file
-nnoremap <leader>vs :wa<Bar>so $MYVIMRC<CR>
-
+set shell=/bin/bash
+let mapleader = " "
+nnoremap <leader>t :terminal<CR>
 " toggle paste mode
 nnoremap <leader>p :set paste!<CR>
+nnoremap <leader>+ <C-W>+
+nnoremap <leader>- <C-W>-
+nnoremap <leader>> <C-W>>
+nnoremap <leader>< <C-W><
 
-" toggle list char
-nnoremap <leader>l :set list!<CR>
-
-" toggle tab/spaces
-nnoremap <leader>t :call TabToggle()<CR>
-
-" switch between tabs
-nnoremap <leader>} :tabnext<CR>
-nnoremap <leader>{ :tabprevious<CR>
-
-" switch between buffers
-nnoremap <leader>] :bnext<CR>
-nnoremap <leader>[ :bprevious<CR>
 
 " *************************************************************************
 " plugin manager
